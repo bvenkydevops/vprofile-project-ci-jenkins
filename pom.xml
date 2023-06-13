@@ -171,6 +171,13 @@
         </plugins>
     </build>
 	<repositories>
+		<distributionManagement>
+        <repository>
+            <id>tomcat</id>
+            <name>Repository Name</name>
+            <url> -DaltDeploymentRepository=your-repository-id::default::https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </distributionManagement>
     <repository>
       <id>${NEXUS-GRP-REPO}</id>
       <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
