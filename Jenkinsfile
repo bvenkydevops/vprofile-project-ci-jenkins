@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    tools {
-        maven 'maven3.9.2'
-    }
     environment {
     AWS_ACCESS_KEY_ID = credentials('access-key')
     AWS_SECRET_ACCESS_KEY = credentials('secret-key')
