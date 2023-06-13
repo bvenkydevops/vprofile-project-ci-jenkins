@@ -174,18 +174,13 @@
 		
         <repository>
             <id>tomcat</id>
-            <name>Repository Name</name>
+            <name>Repositorytomcat</name>
             <url> -DaltDeploymentRepository=your-repository-id::default::https://repo.maven.apache.org/maven2/</url>
         </repository>
     
     <repository>
       <id>${NEXUS-GRP-REPO}</id>
       <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
-    </repository>
-	<repository>
-        <id>tomcat</id>
-        <url>http://13.127.168.192:8080/</url>
-    </repository>
-
+   
   </repositories>
 </project>
