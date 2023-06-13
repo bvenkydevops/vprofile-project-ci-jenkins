@@ -12,7 +12,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SAILYRA/vprofile-project-ci-jenkins.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bvenkydevops/vprofile-project-ci-jenkins.git']])
             }
         }
         stage('build'){
@@ -20,14 +20,10 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-        stage('test'){
+       
+        stage('deploy'){
             steps{
-                sh 'mvn test'
-            }
-        }
-        stage('check-styling'){
-            steps{
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn clean deploy'
             }
         }
         stage('sns-notifcation'){
@@ -41,6 +37,25 @@ pipeline{
                 }
                 snsPublish(topicArn: 'arn:aws:sns:us-east-1:323578407133:sai-sns', message: 'Hello this is sai kumar!')
                 }
+            }
+        }
+        
+        post{
+
+ success{
+ emailext to: 'venkatesh.marolix@gmail.com,venkatesh-workshop',
+          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'devopstrainingblr@gmail.com'
+ }
+ 
+ failure{
+ emailext to: 'venkatesh.marolix@gmail.com,venkatesh-workshop',
+          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'devopstrainingblr@gmail.com'
+ }
+                
             }
         }
     }
