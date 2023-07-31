@@ -14,8 +14,12 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-       
-        stage('deploy'){
+       stage('sonarQube'){
+            steps{
+                sh ''
+            }
+        }
+        stage('Nexus Artifact'){
             steps{
                 sh 'mvn clean deploy'
             }
