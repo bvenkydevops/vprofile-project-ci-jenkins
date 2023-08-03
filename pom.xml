@@ -180,7 +180,7 @@
     
     <repository>
       <id>nexus</id>
-      <url>http://18.205.188.18:8081/repository/v-profile-release/</url>
+      <url> -DaltDeploymentRepository=your-repository-id::default::http://admin:admin@18.205.188.18:8081/repository/v-profile-release/</url>
    </repository>
   </repositories>
 </project>
