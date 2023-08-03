@@ -180,7 +180,7 @@
     
     <repository>
       <id>nexus</id>
-      <url>http://18.205.188.18:8081/repository/v-profile-release/</url>
+      <url>http://18.205.188.18:8081/repository/vprofile-app/</url>
    </repository>
   </repositories>
 </project>
