@@ -179,8 +179,8 @@
         </repository>
     
     <repository>
-      <id>${NEXUS-GRP-REPO}</id>
-      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
+      <id>nexus</id>
+      <url>http://18.205.188.18:8081/repository/v-profile-release/</url>
    </repository>
   </repositories>
 </project>
