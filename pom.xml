@@ -175,7 +175,7 @@
         <repository>
             <id>tomcat</id>
             <name>Repositorytomcat</name>
-            <url> -DaltDeploymentRepository=your-repository-id::default::http://13.127.168.192:8080/</url>
+            <url> -DaltDeploymentRepository=your-repository-id::default::http://3.87.209.44:8080/</url>
         </repository>
     
     <repository>
